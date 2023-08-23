@@ -12,7 +12,7 @@ type (
 
 	Sql interface {
 		InitSql()
-		Migrate()
+		Migrate(path string)
 		Seed()
 		SqlQuery
 	}
