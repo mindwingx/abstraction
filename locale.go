@@ -6,7 +6,7 @@ import (
 )
 
 type Locale interface {
-	InitLocale(format string, locales []string)
+	InitLocaleJson(localesPath []string)
 	// Get translation item by key
 	Get(key string) string
 	// Plural translation item by key contains multiple variables, the param map key should be
