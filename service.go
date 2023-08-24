@@ -43,7 +43,7 @@ type Routes interface {
 type RpcService interface {
 	InitRpcService(rpcEntities []interface{})
 	StartRpc()
-	Caller(destinationPort string, rpcMethod string, args interface{}, reply interface{}) error
+	Caller(address string, method string, args interface{}, reply interface{}) error
 }
 
 type CoreService interface {
