@@ -10,10 +10,15 @@ type (
 	//to handle any other sql driver
 	Query *gorm.DB
 
+	SeederItem struct {
+		Dependency interface{}   // the module entity instance, ex. : domain.User{}
+		Data       []interface{} // the domain mocked data, base on the related struct
+	}
+
 	Sql interface {
 		InitSql()
 		Migrate(path string)
-		Seed()
+		Seed(items []SeederItem)
 		SqlQuery
 	}
 
