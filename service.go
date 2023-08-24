@@ -41,7 +41,7 @@ type Routes interface {
 }
 
 type RpcService interface {
-	InitRpcService()
+	InitRpcService(rpcEntities []interface{})
 	StartRpc()
 	Caller(destinationPort string, rpcMethod string, args interface{}, reply interface{}) error
 }
