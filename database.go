@@ -24,52 +24,52 @@ type (
 
 	SqlQuery interface {
 		Close()
-		Where(query interface{}, args ...interface{}) SqlQuery
-		Or(query interface{}, args ...interface{}) SqlQuery
-		Not(query interface{}, args ...interface{}) SqlQuery
-		Limit(value int) SqlQuery
-		Offset(value int) SqlQuery
-		Order(value string) SqlQuery
-		Select(query interface{}, args ...interface{}) SqlQuery
-		Omit(columns ...string) SqlQuery
-		Group(query string) SqlQuery
-		Having(query string, values ...interface{}) SqlQuery
-		Joins(query string, args ...interface{}) SqlQuery
-		Scopes(funcs ...func(Query) SqlQuery) SqlQuery
-		Unscoped() SqlQuery
-		Attrs(attrs ...interface{}) SqlQuery
-		Assign(attrs ...interface{}) SqlQuery
-		First(out interface{}, where ...interface{}) SqlQuery
-		Last(out interface{}, where ...interface{}) SqlQuery
-		Find(out interface{}, where ...interface{}) SqlQuery
-		Scan(dest interface{}) SqlQuery
+		Where(query interface{}, args ...interface{}) Sql
+		Or(query interface{}, args ...interface{}) Sql
+		Not(query interface{}, args ...interface{}) Sql
+		Limit(value int) Sql
+		Offset(value int) Sql
+		Order(value string) Sql
+		Select(query interface{}, args ...interface{}) Sql
+		Omit(columns ...string) Sql
+		Group(query string) Sql
+		Having(query string, values ...interface{}) Sql
+		Joins(query string, args ...interface{}) Sql
+		Scopes(funcs ...func(Query) Sql) Sql
+		Unscoped() Sql
+		Attrs(attrs ...interface{}) Sql
+		Assign(attrs ...interface{}) Sql
+		First(out interface{}, where ...interface{}) Sql
+		Last(out interface{}, where ...interface{}) Sql
+		Find(out interface{}, where ...interface{}) Sql
+		Scan(dest interface{}) Sql
 		Row() *sql.Row
 		Rows() (*sql.Rows, error)
 		ScanRows(rows *sql.Rows, result interface{}) error
-		Pluck(column string, value interface{}) SqlQuery
-		Count(value *int64) SqlQuery
-		FirstOrInit(out interface{}, where ...interface{}) SqlQuery
-		FirstOrCreate(out interface{}, where ...interface{}) SqlQuery
-		Update(column string, attrs ...interface{}) SqlQuery
-		Updates(values interface{}) SqlQuery
-		UpdateColumn(column string, attrs ...interface{}) SqlQuery
-		UpdateColumns(values interface{}) SqlQuery
-		Save(value interface{}) SqlQuery
-		Create(value interface{}) SqlQuery
-		Delete(value interface{}, where ...interface{}) SqlQuery
-		Raw(sql string, values ...interface{}) SqlQuery
-		Exec(sql string, values ...interface{}) SqlQuery
-		Model(value interface{}) SqlQuery
-		Table(name string) SqlQuery
-		Debug() SqlQuery
-		Begin() SqlQuery
-		Commit() SqlQuery
-		Rollback() SqlQuery
+		Pluck(column string, value interface{}) Sql
+		Count(value *int64) Sql
+		FirstOrInit(out interface{}, where ...interface{}) Sql
+		FirstOrCreate(out interface{}, where ...interface{}) Sql
+		Update(column string, attrs ...interface{}) Sql
+		Updates(values interface{}) Sql
+		UpdateColumn(column string, attrs ...interface{}) Sql
+		UpdateColumns(values interface{}) Sql
+		Save(value interface{}) Sql
+		Create(value interface{}) Sql
+		Delete(value interface{}, where ...interface{}) Sql
+		Raw(sql string, values ...interface{}) Sql
+		Exec(sql string, values ...interface{}) Sql
+		Model(value interface{}) Sql
+		Table(name string) Sql
+		Debug() Sql
+		Begin() Sql
+		Commit() Sql
+		Rollback() Sql
 		AutoMigrate(values ...interface{}) error
 		Association(column string) *gorm.Association
-		Preload(column string, conditions ...interface{}) SqlQuery
-		Set(name string, value interface{}) SqlQuery
-		InstanceSet(name string, value interface{}) SqlQuery
+		Preload(column string, conditions ...interface{}) Sql
+		Set(name string, value interface{}) Sql
+		InstanceSet(name string, value interface{}) Sql
 		Get(name string) (value interface{}, ok bool)
 		SetJoinTable(model interface{}, column string, handler interface{}) error
 		AddError(err error) error
